@@ -1,0 +1,1 @@
+abigen --abi=abi.json --pkg=mintaura --out=mintaura_generated.go -type MintAuraGenerated

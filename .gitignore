@@ -1,0 +1,9 @@
+private_key.txt
+testnet.config.json
+.env
+
+test
+
+# IDE setting
+.idea
+.vscode

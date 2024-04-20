@@ -1,0 +1,1 @@
+abigen --abi=bex_abi.json --pkg=bex --out=bex_generated.go -type BexGenerated

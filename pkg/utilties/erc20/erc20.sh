@@ -1,0 +1,1 @@
+abigen --abi=erc20.json --pkg=bex --out=erc20_generated.go -type Erc20Generated
