@@ -33,7 +33,7 @@ func SendTx(c *ethclient.Client, privateKey *ecdsa.PrivateKey, data []byte, valu
 		return nil, err
 	}
 
-	tip := big.NewInt(1e8)
+	tip := big.NewInt(500000)
 
 	gas, err := c.EstimateGas(context.Background(), ethereum.CallMsg{
 		From:  fromAddress,
@@ -50,7 +50,7 @@ func SendTx(c *ethclient.Client, privateKey *ecdsa.PrivateKey, data []byte, valu
 	signedTx, err := types.SignNewTx(privateKey, types.LatestSignerForChainID(chainId), &types.DynamicFeeTx{
 		ChainID:   chainId,
 		Nonce:     nonce,
-		GasFeeCap: new(big.Int).Div(new(big.Int).Mul(gasPrice, new(big.Int).SetInt64(3)), new(big.Int).SetInt64(2)),
+		GasFeeCap: new(big.Int).Mul(gasPrice, new(big.Int).SetInt64(2)),
 		GasTipCap: tip,
 		Gas:       gas,
 		To:        &to,

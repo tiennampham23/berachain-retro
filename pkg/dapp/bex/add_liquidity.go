@@ -6,6 +6,7 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
+	dappCommon "github.com/tiennampham23/berachain-airdrop/pkg/dapp/common"
 	"github.com/tiennampham23/berachain-airdrop/pkg/log"
 	"github.com/tiennampham23/berachain-airdrop/pkg/utilties/eth"
 	"math/big"
@@ -22,7 +23,7 @@ func AddLiquidityForSingleToken(
 		from, _ = eth.GetAddressFromPrivateKey(privateKey)
 	)
 
-	err := ApproveIfNeed(c, privateKey, tokenIn, amount)
+	err := dappCommon.ApproveIfNeed(c, privateKey, tokenIn, amount, Erc20ModuleContract)
 	if err != nil {
 		log.Logger().Errorw("Approve failed", "err", err)
 		return nil, err
