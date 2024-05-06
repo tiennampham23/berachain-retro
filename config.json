@@ -1,0 +1,8 @@
+
+{
+  "rpc": "change me",
+  "private_keys": [
+  ],
+  "enable_mint_aura": false,
+  "enable_wrap_bera": false
+}
